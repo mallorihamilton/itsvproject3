@@ -12,13 +12,7 @@ text = txt.split("\n")
 file.close()
 
 #Editing the text from the file
-"""
-modify("myFile.txt","Kundan","Rohan")
-file = open("myFile.txt","r+")
-text = file.read()
-print("After modification:",text)
-file.close()
-"""
-print("First line:", text[0])
-print(text[0][text[0].find("[")+1:text[0].find(":")])
+for i in range(len(text)):
+    text[i] = text[i][text[i].find("[")+1:text[i].find(":")]
 print(len(text))
+print(text)
