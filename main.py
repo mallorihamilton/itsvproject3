@@ -1,8 +1,10 @@
 from urllib.request import urlretrieve
+import os.path
 #Downloading the file
-url = ("https://s3.amazonaws.com/tcmg476/http_access_log")
-filename = "Server Logs.csv"
-urlretrieve(url, filename)
+if(not os.path.isfile("Server Logs.csv")):
+    url = ("https://s3.amazonaws.com/tcmg476/http_access_log")
+    filename = "Server Logs.csv"
+    urlretrieve(url, filename)
 
 #Opening the file and reading the text from it
 file = open("Server Logs.csv","r+")
