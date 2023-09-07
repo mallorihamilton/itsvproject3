@@ -1,0 +1,24 @@
+from urllib.request import urlretrieve
+#Downloading the file
+url = ("https://s3.amazonaws.com/tcmg476/http_access_log")
+filename = "Server Logs.csv"
+urlretrieve(url, filename)
+
+#Opening the file and reading the text from it
+file = open("Server Logs.csv","r+")
+txt = file.read()
+text = txt.split("\n")
+#print(text)
+file.close()
+
+#Editing the text from the file
+"""
+modify("myFile.txt","Kundan","Rohan")
+file = open("myFile.txt","r+")
+text = file.read()
+print("After modification:",text)
+file.close()
+"""
+print("First line:", text[0])
+print(text[0][text[0].find("[")+1:text[0].find(":")])
+print(len(text))
