@@ -12,7 +12,14 @@ text = txt.split("\n")
 file.close()
 
 #Editing the text from the file
+j = 0
+increment = False
 for i in range(len(text)):
     text[i] = text[i][text[i].find("[")+1:text[i].find(":")]
-print(len(text))
-print(text)
+    if text[i] == "11/Apr/1995":
+        increment = True
+    if increment:
+        j += 1
+print(len(text), " total requests made in the time period")
+#print(text)
+print(j, " requests made in the last 6 months")
