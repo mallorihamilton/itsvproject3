@@ -1,9 +1,3 @@
-"""
-take entries and divide by number of days (find number of days by making a list of days, and only add a new entry for the day if there is not already one)
-find number of requests per week by multiplying entries per day by 7
-find number of requests per month by averaging number of entries in each csv file
-"""
-
 from urllib.request import urlretrieve
 from datetime import datetime
 
