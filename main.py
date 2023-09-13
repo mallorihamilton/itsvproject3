@@ -1,3 +1,9 @@
+"""
+take entries and divide by number of days (find number of days by making a list of days, and only add a new entry for the day if there is not already one)
+find number of requests per week by multiplying entries per day by 7
+find number of requests per month by averaging number of entries in each csv file
+"""
+
 from urllib.request import urlretrieve
 from datetime import datetime
 
@@ -170,16 +176,3 @@ jul1995.close()
 aug1995.close()
 sep1995.close()
 oct1995.close()
-
-#Editing the text from the file
-j = 0
-increment = False
-for i in range(len(text)):
-    text[i] = text[i][text[i].find("[")+1:text[i].find(":")]
-    if text[i] == "11/Apr/1995":
-        increment = True
-    if increment:
-        j += 1
-print(len(text), " total requests made in the time period")
-#print(text)
-print(j, " requests made in the last 6 months")
