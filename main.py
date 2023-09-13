@@ -131,35 +131,39 @@ for item in files:
         lowest = files[item]
         low = item
 
+choice = int(input("Press 1 to print how many requests were in each day and month.\nPress 2 to print just the average requests for each day and month.\n"))
+
 print(len(text), "total requests made in the time period.")
 print(days, "requests made in the last 6 months.")
 
 #Prints the number of requests on each day, but probably not what is being asked
-for date in dates:
-    print(dates[date], "requests were made on", date)
+if choice == 1:
+    for date in dates:
+        print(dates[date], "requests were made on", date)
 
 dailyRequests = float(len(text)) / len(dates)
 print(dailyRequests, "requests were made each day on average.")
 print(dailyRequests * 7, "requests were made each week on average.")
 
 #Prints the number of requests on each month, but probably not what is being asked
-print(oct4, "requests were made in October 1994.")
-print(nov4, "requests were made in November 1994.")
-print(dec4, "requests were made in December 1994.")
-print(jan5, "requests were made in January 1995.")
-print(feb5, "requests were made in February 1995.")
-print(mar5, "requests were made in March 1995.")
-print(apr5, "requests were made in April 1995.")
-print(may5, "requests were made in May 1995.")
-print(jun5, "requests were made in June 1995.")
-print(jul5, "requests were made in July 1995.")
-print(aug5, "requests were made in August 1995.")
-print(sep5, "requests were made in September 1995.")
-print(oct5, "requests were made in October 1995.")
+if choice == 1:
+    print(oct4, "requests were made in October 1994.")
+    print(nov4, "requests were made in November 1994.")
+    print(dec4, "requests were made in December 1994.")
+    print(jan5, "requests were made in January 1995.")
+    print(feb5, "requests were made in February 1995.")
+    print(mar5, "requests were made in March 1995.")
+    print(apr5, "requests were made in April 1995.")
+    print(may5, "requests were made in May 1995.")
+    print(jun5, "requests were made in June 1995.")
+    print(jul5, "requests were made in July 1995.")
+    print(aug5, "requests were made in August 1995.")
+    print(sep5, "requests were made in September 1995.")
+    print(oct5, "requests were made in October 1995.")
 print(float(oct4 + nov4 + dec4 + jan5 + feb5 + mar5 + apr5 + may5 + jun5 + jul5 + aug5 + sep5 + oct5) / 13, "requests were made each month on average.")
 
-print(str(float(failed) / len(text)) + "% of the requests failed.")
-print(str(float(redirected) / len(text)) + "% of the requests were redirected.")
+print(str(float(failed) / len(text) * 100) + "% of the requests failed.")
+print(str(float(redirected) / len(text) * 100) + "% of the requests were redirected.")
 print(high, "was the most requested file with", highest, "requests.")
 print(low, "was the least-requested file with", lowest, "requests.")
 
