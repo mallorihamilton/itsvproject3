@@ -5,8 +5,11 @@ find number of requests per month by averaging number of entries in each csv fil
 """
 
 from urllib.request import urlretrieve
+<<<<<<< HEAD
 from datetime import datetime
 
+=======
+>>>>>>> d594eb4ff4abbdb59dd1280edd7da30cd5b6f3d7
 import os.path
 #Downloading the file
 if(not os.path.isfile("Server Logs.csv")):
@@ -20,6 +23,7 @@ txt = file.read()
 text = txt.split("\n")
 file.close()
 
+<<<<<<< HEAD
 oct1994 = open("October 1994.csv", "w+")
 nov1994 = open("November 1994.csv", "w+")
 dec1994 = open("December 1994.csv", "w+")
@@ -176,3 +180,17 @@ jul1995.close()
 aug1995.close()
 sep1995.close()
 oct1995.close()
+=======
+#Editing the text from the file
+j = 0
+increment = False
+for i in range(len(text)):
+    text[i] = text[i][text[i].find("[")+1:text[i].find(":")]
+    if text[i] == "11/Apr/1995":
+        increment = True
+    if increment:
+        j += 1
+print(len(text), " total requests made in the time period")
+#print(text)
+print(j, " requests made in the last 6 months")
+>>>>>>> d594eb4ff4abbdb59dd1280edd7da30cd5b6f3d7
